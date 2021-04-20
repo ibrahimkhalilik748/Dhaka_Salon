@@ -1,0 +1,16 @@
+.service{
+    background-color: #12a42426;
+    padding: 30px;
+    border-radius: 5px;
+    height: 450px;
+}
+.service img{
+    height:200px;
+    border-radius: 5px;
+}
+.service h4{
+    margin-left: 50px;
+}
+.service a{
+    margin-left: 50px;
+}

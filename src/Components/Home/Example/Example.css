@@ -1,0 +1,24 @@
+.example h2, h3{
+    text-align:left;
+    font-size:41px;
+    font-weight:600;
+}
+/* .example h2{
+    font-size:41px;
+    font-weight:600;
+} */
+
+.example p{
+    text-align:left;
+}
+.example .float{
+    float: left;
+}
+.text{
+    margin-left: 60px;
+}
+@media only screen and (max-width: 777px) {
+    .text{
+        margin-left: 0px;
+    }
+}

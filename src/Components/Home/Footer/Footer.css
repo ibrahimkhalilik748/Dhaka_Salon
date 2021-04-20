@@ -1,0 +1,21 @@
+.footer a:hover{
+    color: #157347;
+}
+.footer img{
+    width:180%;
+}
+.footer .lift{
+    padding-left: 110px;
+}
+.footer{
+    background-color: #15734700;
+}
+
+@media only screen and (max-width: 777px) {
+    .footer img{
+        width:50%;
+    }
+    .footer .lift{
+        padding-left: 210px;
+    }
+}

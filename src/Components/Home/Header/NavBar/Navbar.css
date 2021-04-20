@@ -1,0 +1,30 @@
+.nav-li{
+    padding: 5px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #157347;
+    border-radius: 5px;
+
+}
+.nav-li:hover{
+    padding: 5px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #157347;
+    background-color: #157347;
+}
+
+a:hover{
+    color: white;
+}
+/* a{
+    color: #157347;
+} */
+.color{
+    color: #157347;
+}
+.float{
+    margin-left: auto;
+    padding-right: 30px;
+}

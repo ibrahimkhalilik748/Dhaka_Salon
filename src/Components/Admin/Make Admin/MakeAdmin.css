@@ -1,0 +1,18 @@
+.form{
+    text-align:left;
+    margin: 40px;
+}
+.form h1{
+    padding-left: 15px;
+}
+.form input{
+    width: 30%;
+    height: 40px;
+    margin: 10px;
+    border: 0px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.form button{
+    margin-left: 10px;
+}

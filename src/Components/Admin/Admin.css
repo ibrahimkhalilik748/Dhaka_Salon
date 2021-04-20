@@ -1,0 +1,34 @@
+.adminBody{
+    background-color: #157347;
+}
+a{
+    text-decoration: none;
+
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+.options{
+    width: 100%;
+    list-style: none;
+    /* height:30px; */
+    padding:5px 0px;
+    margin: 10px;
+    border: 1px solid white;
+    
+}
+.options a{
+    width: 100%;
+    color: white;
+    /* padding:5px 10px;
+    margin: 10px;
+    border: 1px solid white; */
+}
+.optionsBody{
+    padding-right: 30px;
+}
+.option2{
+    border-left: 1px solid black;
+    height: 500px;
+}
