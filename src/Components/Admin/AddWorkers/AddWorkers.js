@@ -21,7 +21,7 @@ const AddWorkers = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('http://localhost:5000/AddWorkers', {
+        fetch('https://stormy-savannah-45858.herokuapp.com/AddWorkers', {
             method: 'POST',
             body: formData
         })

@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddService.css'
+import { Link, useHistory } from "react-router-dom";
+
+
 
 const AddService = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [imageURL, setImageURL] = useState();
+    const history = useHistory();
 
     const onSubmit = data => {
         const addService = {
@@ -14,7 +18,7 @@ const AddService = () => {
             imageURL: imageURL,
             servicePrice: data.servicePrice
         };
-        const url = `http://localhost:5000/addService`;
+        const url = `https://stormy-savannah-45858.herokuapp.com/addService`;
 
 
         fetch(url, {
@@ -24,8 +28,12 @@ const AddService = () => {
             },
             body: JSON.stringify(addService)
         })
-            .then(res => console.log('server side response', res))
-        console.log(data)
+            .then(res => {
+                console.log('server side response', res)
+                window.location.href = "https://getbootstrap.com"
+            })
+        // history.push("/https://getbootstrap.com/");
+
     };
 
     const handleImageUpload = event => {
@@ -44,21 +52,27 @@ const AddService = () => {
             });
 
     }
+    // useHistory.push(location)
+
+    // const location = {
+    //     pathname: '/somewhere',
+    //     state: { fromDashboard: true }
+    //   }
     return (
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="color">Add Service</h1>
 
-            <input {...register("title")} type="text" name="title" placeholder="Please enter  title "/>
+            <input {...register("title",{ required: true } )} type="text" name="title" placeholder="Please enter  title " />
 
-            <input {...register("servicePrice")} type="text" placeholder="Price" /> <br/>
+            <input {...register("servicePrice",{ required: true } )} type="text" placeholder="Price" /> <br />
 
-            <input style={{ height: '100px', paddingTop: '0px' }} {...register("description")} type="text" placeholder="Description" />
+            <input style={{ height: '100px', paddingTop: '0px' }} {...register("description",{ required: true } ) } type="text" placeholder="Description" />
 
-            <input {...register("serviceImg")} type="file" onChange={handleImageUpload} /> <br/>
-
+            <input {...register("serviceImg",{ required: true } )} type="file" onChange={handleImageUpload} /> <br />
 
             <button className="btn btn-success mt-2">Submit</button>
+
         </form>
 
 

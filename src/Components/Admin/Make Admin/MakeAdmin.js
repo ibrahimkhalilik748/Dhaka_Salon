@@ -13,7 +13,7 @@ const MakeAdmin = () => {
             email: data.email,
             imageURL: imageURL,
         };
-        const url = `http://localhost:5000/addAdmin`;
+        const url = `https://stormy-savannah-45858.herokuapp.com/addAdmin`;
 
 
         fetch(url, {

@@ -5,7 +5,7 @@ import './ServiceCard.css'
 const ServiceCard = () => {
     const [userServices, setUserServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://stormy-savannah-45858.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setUserServices(data))
 
@@ -20,14 +20,14 @@ const ServiceCard = () => {
                         <div className="col-md-4 mt-5">
                             <div className="service">
                                 <img src={service.imageURL} class="img-fluid" />
-                                <h5>{service.title}</h5>
+                                <h5 className="mt-3">{service.title}</h5>
                                 <p>{service.description}</p>
                                 <div className="row">
                                     <div className="col-2">
                                         <h4>${service.servicePrice}</h4>
                                     </div>
                                     <div className="col-8">
-                                    <Link to={`/booking`} class="btn btn-success">Booking Seat</Link>
+                                    <Link to={`/booking/${service._id}`} class="btn btn-success">Booking Seat</Link>
                                     </div>
                                 </div>
                             </div>

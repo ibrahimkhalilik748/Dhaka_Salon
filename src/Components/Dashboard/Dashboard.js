@@ -19,15 +19,13 @@ const Dashboard = () => {
                             <div className="optionsBody pt-1">
                                 <ul>
                                     <li className="options"><Link to="/dashboard/review">Review</Link></li>
-                                    <li className="options"><Link to="/makeAdmin">Make Admin</Link></li>
-                                    <li className="options"><Link to="/addWorkers">Add Workers</Link></li>
-                                    <li className="options"><Link to="/manageServices">Manage Services</Link></li>
+                                    <li className="options"><Link to="/orderlist">Oder List</Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div style={{ backgroundColor: '#d8e2dc' }} className="col-md-10 option2">
                             <Switch>
-                                <Route exact path="/">
+                                <Route exact path="/dashboard/review">
                                     <Review></Review>
                                 </Route>
                                 <Route path="/dashboard/review">

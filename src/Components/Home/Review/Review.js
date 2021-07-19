@@ -5,18 +5,18 @@ import Dp from '../../image/download.jpg'
 const Review = () => {
     const [review, setReview] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://stormy-savannah-45858.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReview(data))
 
     }, [])
     return (
         <div className="container">
-            <h1>Services</h1><br />
+            <h1>Review</h1><br />
             <div className="row">
                 {
                     review.map(review =>
-                        <div className="col-md-4">
+                        <div className="col-md-4 mt-4">
                             <div className="review">
                                 <div className="row">
                                     <div className="col-3">

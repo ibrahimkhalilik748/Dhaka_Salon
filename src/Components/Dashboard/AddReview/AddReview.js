@@ -10,7 +10,7 @@ const Review = () => {
             email: data.email,
             review: data.review,
         };
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://stormy-savannah-45858.herokuapp.com/addReview`;
         fetch(url, {
             method: 'POST',
             headers: {

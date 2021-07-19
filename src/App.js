@@ -39,19 +39,19 @@ function App() {
             <Route path="/login">
               <LogIn />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
-            <Route path="/admin">
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
               <Admin />
-            </Route>
+            </PrivateRoute>
             <Route path="/bookingSeat">
               <ServiceCard></ServiceCard>
             </Route>
-            <Route path="bookingForm">
+            <Route path="/bookingForm">
               <BookingForm></BookingForm>
             </Route>
-            <Route path="booking">
+            <Route path="/booking/:_id">
               <Booking></Booking>
             </Route>
           </Switch>

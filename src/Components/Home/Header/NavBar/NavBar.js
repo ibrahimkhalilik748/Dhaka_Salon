@@ -12,7 +12,7 @@ const NavBar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
     const [admin, setAdmin] = useState(false)
     useEffect(() => {
-        fetch(`http://localhost:5000//isAdmin`,
+        fetch(`https://stormy-savannah-45858.herokuapp.com/isAdmin`,
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
@@ -47,12 +47,9 @@ const NavBar = () => {
                                 <Link class=" color" to="/dashboard/review">Dashboard</Link>
                             </li>
 
-                            {
-                                admin &&
-                                <li class="nav-item nav-li">
-                                    <Link class=" color" to="/admin">Admin</Link>
-                                </li>
-                            }
+                            <li class="nav-item nav-li">
+                                <Link class=" color" to="/admin">Admin</Link>
+                            </li>
 
                             <li class="nav-item">
                                 <Link class=" btn btn-success bg" to="/login">Log In</Link>
