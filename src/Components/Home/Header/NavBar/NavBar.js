@@ -40,7 +40,7 @@ const NavBar = () => {
                             <li class="nav-item">
                                 <Link class="btn btn-outline-success" to="/contact">Contact</Link>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item"> 
                                 <Link class="btn btn-outline-success" to="/dashboard/review">Dashboard</Link>
                             </li>
 
