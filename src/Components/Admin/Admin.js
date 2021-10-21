@@ -20,55 +20,53 @@ const Admin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [admin, setAdmin] = useState(false)
     useEffect(() => {
-        fetch(`https://stormy-savannah-45858.herokuapp.com/admin`,
+        fetch(`https://stormy-savannah-45858.herokuapp.com/isAdmin`,
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify({ email: loggedInUser.email })
             })
             .then(res => res.json())
-            .then(data => {
-                setAdmin(data)
-                console.log(data);
-            });
+            .then(data => setAdmin(data));
     }, [])
     return (
-        <div className="mt-5  pb-1">
+        <div className="admin pb-1">
             <Router>
                 <div>
                     <div className="row">
                         <div className="col-md-2 adminBody">
                             <div className="optionsBody pt-1">
                                 <ul>
-                                    {/* <li className="options"><Link to="/review">Add Review</Link></li>
-                                    <li className="options"><Link to="/orderList">Booking</Link></li> */}
 
-                                    <li className="options"><Link to="/orderList">Order List</Link></li>
-                                    <li className="options"><Link to="/addService">Add Service</Link></li>
-                                    <li className="options"><Link to="/makeAdmin">Make Admin</Link></li>
-                                    <li className="options"><Link to="/manageServices">Manage Services</Link>
-                                    </li>
+                                    {/* {admin &&
+                                        <div> */}
+                                    <li className="options"><Link to="/admin/addService">Add Service</Link></li>
+                                    <li className="options"><Link to="/admin/makeAdmin">Make Admin</Link></li>
+                                    {/* </div>
+                                    } */}
+                                    <li className="options"><Link to="/admin/orderList">Order List</Link></li>
+                                    <li className="options"><Link to="/admin/manageServices">Manage Services</Link></li>
                                 </ul>
                             </div>
                         </div>
                         <div style={{ backgroundColor: '#d8e2dc' }} className="col-md-10 option2">
                             <Switch>
-                                <Route exact path="/">
+                                <Route exact path="/admin/">
                                     <AddService></AddService>
                                 </Route>
-                                <Route path="/addService">
+                                <Route path="/admin/addService">
                                     <AddService></AddService>
                                 </Route>
-                                <Route path="/orderList">
+                                <Route path="/admin/orderList">
                                     <OrderList></OrderList>
                                 </Route>
-                                <Route path="/makeAdmin">
+                                <Route path="/admin/makeAdmin">
                                     <MakeAdmin></MakeAdmin>
                                 </Route>
-                                <Route path="/manageServices">
+                                <Route path="/admin/manageServices">
                                     <ManageServices></ManageServices>
                                 </Route>
-                                <Route path="/addWorkers">
+                                <Route path="/admin/addWorkers">
                                     <AddWorkers></AddWorkers>
                                 </Route>
                                 {/* <Route path="/review">

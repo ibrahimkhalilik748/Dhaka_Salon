@@ -16,30 +16,11 @@ const LogIn = () => {
     firebase.initializeApp(firebaseConfig);
   }
 
-  // const handleGoogleLogIn = () => {
-  //     var provider = new firebase.auth.GoogleAuthProvider();
-  //     firebase.auth().signInWithPopup(provider).then((result) => {
-  //             /** @type {firebase.auth.OAuthCredential} */
-  //             var credential = result.credential;
-  //             var token = credential.accessToken;
-  //             const { displayName, photoURL, email } = result.user;
-  //             const signInUser = { name: displayName, photoURL, email }
-  //             setLoggedInUser(signInUser);
-  //             history.replace(from);
-  //         })
-  //         .catch((error) => {
-  //             var errorCode = error.code;
-  //             var errorMessage = error.message;
-  //             var email = error.email;
-  //             var credential = error.credential;
-  //         });
-  // }
-
   const handleGoogleLogIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
-      const { displayName, email } = result.user;
-      const signedInUser = { name: displayName, email }
+      const { displayName, email, photoURL } = result.user;
+      const signedInUser = { name: displayName, email, photoURL }
       setLoggedInUser(signedInUser);
       //  history.push('/')
       history.replace(from)
@@ -49,7 +30,7 @@ const LogIn = () => {
     });
   }
   return (
-    <div className="container text-center"><br /><br /><br /><br /><br /><br /><br />
+    <div style={{marginTop:82}} className="container text-center"><br /><br /><br /><br /><br /><br /><br />
       <button style={{ width: '20%' }} className="btn btn-outline-success pb-2" onClick={handleGoogleLogIn}><img style={{ width: '20%', paddingRight: '20px' }} src="https://symbols-electrical.getvecta.com/stencil_82/45_google-icon.d8d982f8a1.svg" alt="" />{newUser ? 'log out' : 'Log In to Google'} </button>
     </div>
   );

@@ -18,9 +18,8 @@ const AddService = () => {
             imageURL: imageURL,
             servicePrice: data.servicePrice
         };
+
         const url = `https://stormy-savannah-45858.herokuapp.com/addService`;
-
-
         fetch(url, {
             method: 'POST',
             headers: {
@@ -30,9 +29,18 @@ const AddService = () => {
         })
             .then(res => {
                 console.log('server side response', res)
-                window.location.href = "https://getbootstrap.com"
+
+                // useHistory.push(location)
+                // const location = {
+                //     pathname: '/home',
+                //     state: { fromDashboard: true }
+                // }
+                // window.location.href = "https://getbootstrap.com"
+                window.location.href = "/home"
+                // useHistory.push("/home")
+
             })
-        // history.push("/https://getbootstrap.com/");
+        // useHistory.push("/home");
 
     };
 
@@ -63,13 +71,14 @@ const AddService = () => {
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="color">Add Service</h1>
 
-            <input {...register("title",{ required: true } )} type="text" name="title" placeholder="Please enter  title " />
+            <input {...register("title", { required: true })} type="text" name="title" placeholder="Please enter  title " />
 
-            <input {...register("servicePrice",{ required: true } )} type="text" placeholder="Price" /> <br />
+            <input {...register("servicePrice", { required: true })} type="text" placeholder="Price" /> <br />
 
-            <input style={{ height: '100px', paddingTop: '0px' }} {...register("description",{ required: true } ) } type="text" placeholder="Description" />
+            <input style={{ height: '100px', paddingTop: '0px' }} {...register("description", { required: true })} type="text" placeholder="Description" />
 
-            <input {...register("serviceImg",{ required: true } )} type="file" onChange={handleImageUpload} /> <br />
+            <input {...register("serviceImg", { required: true })} type="file" onChange={handleImageUpload} /> <br />
+            {/* <input type="date" /> */}
 
             <button className="btn btn-success mt-2">Submit</button>
 

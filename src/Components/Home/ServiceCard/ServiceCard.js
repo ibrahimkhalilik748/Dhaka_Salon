@@ -13,11 +13,12 @@ const ServiceCard = () => {
 
     return (
         <div className="container">
+            <br />
             <h1>Services</h1><br/>
             <div className="row">
                 {
                     userServices.map(service =>
-                        <div className="col-md-4 mt-5">
+                        <div className="col-md-4">
                             <div className="service">
                                 <img src={service.imageURL} class="img-fluid" />
                                 <h5 className="mt-3">{service.title}</h5>

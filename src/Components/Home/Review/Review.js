@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Review.css'
-import Dp from '../../image/download.jpg'
+// import Dp from '../../image/download.jpg'
 
 const Review = () => {
     const [review, setReview] = useState([])
@@ -17,12 +17,12 @@ const Review = () => {
                 {
                     review.map(review =>
                         <div className="col-md-4 mt-4">
-                            <div className="review">
+                            <div className="review ">
                                 <div className="row">
                                     <div className="col-3">
-                                        <img src={Dp} class="img-fluid" />
+                                        <img src={review.photo} alt="" />
                                     </div>
-                                    <div className="col-9">
+                                    <div className="col-9 pt-2">
                                         <h5>{review.name}</h5>
                                     </div>
                                 </div>

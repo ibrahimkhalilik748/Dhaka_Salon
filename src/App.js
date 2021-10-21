@@ -17,6 +17,8 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import BookingForm from './Components/BookingForm/BookingForm';
 import ServiceCard from './Components/Home/ServiceCard/ServiceCard';
 import Booking from './Components/Dashboard/Booking/Booking';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 
 
 
@@ -35,6 +37,12 @@ function App() {
             </Route>
             <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/Services">
+              <About></About>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <Route path="/login">
               <LogIn />
